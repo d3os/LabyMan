@@ -30,7 +30,7 @@ class Scene extends Sprite {
 
   let box : DOMRect =  this.getParentNode().getBoundingClientRect();
 
-  this.setDimension(640,480);
+  this.setDimension(500,500);
   this.setX((box.width - this.getWidth()) / 2);
   this.setY((box.height - this.getHeight()) / 2);
  }
