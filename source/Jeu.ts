@@ -41,7 +41,7 @@ public perso_ : Pacman;
         this.appendChild(mur);
       }
       if(this.matrice_[i][j]==8){
-        this.perso_ = new Pacman(document.createElement("img"),j*this.pas_, i*this.pas_);
+        this.perso_ = new Pacman(document.createElement("img"),this,j, i);
         this.perso_.setImage("gragas.png",this.pas_,this.pas_);
         this.appendChild(this.perso_);
       }   
@@ -54,11 +54,13 @@ public perso_ : Pacman;
   this.initialiserCarte();
   this.pas_ = this.getWidth()/this.matrice_.length;
   this.dessinerLabyrinthe();
+  this.perso_.animer();
  }
 
  //--------------------------------------------------------------------------------------------pause
  public override pause() {
   /* Ecrire ici le code qui met la scene en pause. */
+  this.perso_.figer();
  }
 
  //------------------------------------------------------------------------------------------unpause
